@@ -15,8 +15,8 @@ const ProdDetails = () => {
 
   const navigate = useNavigate();
 
-  const [source, setSource] = useState('');
-  const [destination, setDestination] = useState('');
+  const [source, setSource] = useState('Bangalore');
+  const [destination, setDestination] = useState('Bangalore');
   const [volume, setVolume] = useState('');
   const [quantity, setQuantity] = useState('');
   const [producttype, setProducttype] = useState('');
