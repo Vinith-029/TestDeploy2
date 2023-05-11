@@ -65,7 +65,7 @@ const Vlist = () => {
         document,
       });
       alert('Vehicle Added');
-      window.location.href = 'https://testlogiship.onrender.com/Vpending';
+      window.location.href = '/Vpending';
       console.log(response.data);
     } catch (err) {
       console.error(err);
