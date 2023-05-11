@@ -1,8 +1,11 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import Navigation from '../components/Nav';
 
 const Vhome = () => {
   return (
+    <div>
+    <Navigation />
     <div className='w-screen h-screen overflow-hidden'>
     <div className="bg-hero-pattern bg-cover h-screen ">
       <form 
@@ -59,6 +62,7 @@ const Vhome = () => {
           </Link>
           </div>
       </form>
+    </div>
     </div>
   </div>
   );
