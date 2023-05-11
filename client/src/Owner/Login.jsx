@@ -8,7 +8,7 @@ import axios from 'axios';
 //import { StarsCanvas } from '../components/canvas';
 
 const instance = axios.create({
-  baseURL: 'http://localhost:3000/api/auth',
+  baseURL: 'https://testlogiship.onrender.com/api/auth',
   timeout: 5000, // Timeout to wait for a response (in milliseconds)
 });
 
