@@ -7,7 +7,7 @@ import { logo } from '../assets';
 import Navigation from '../components/Nav';
 
 const instance = axios.create({
-  baseURL: 'http://localhost:3000/api/package/',
+  baseURL: 'https://testlogiship.onrender.com/api/package/',
   timeout: 5000, // Timeout to wait for a response (in milliseconds)
 });
 

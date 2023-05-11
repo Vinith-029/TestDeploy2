@@ -13,7 +13,7 @@ export const ApproveVehicles = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/api/transport/getPending`, {
+        const response = await axios.get(`https://testlogiship.onrender.com/api/transport/getPending`, {
           params: {
             status: 'Pending',
           },
@@ -39,7 +39,7 @@ export const ApproveVehicles = () => {
      const ID  = selectedVehicle._id;
     // console.log(ID);
     axios
-      .post("http://localhost:3000/api/transport/update/" + ID, { status : "approved",
+      .post("https://testlogiship.onrender.com/api/transport/update/" + ID, { status : "approved",
       ID
     })
       .then((response) => {
@@ -60,7 +60,7 @@ export const ApproveVehicles = () => {
      const ID  = selectedVehicle._id;
     // console.log(ID);
     axios
-      .post("http://localhost:3000/api/transport/update/" + ID, { status : "Reject",
+      .post("https://testlogiship.onrender.com/api/transport/update/" + ID, { status : "Reject",
       ID
     })
       .then((response) => {
