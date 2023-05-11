@@ -6,8 +6,8 @@ import {
 
 const router = express.Router();
 
-router.route("/checkout").post(checkout);
+router.route("https://testlogiship.onrender.com/checkout").post(checkout);
 
-router.route("/paymentverification").post(paymentVerification);
+router.route("https://testlogiship.onrender.com/paymentverification").post(paymentVerification);
 
 export default router;
