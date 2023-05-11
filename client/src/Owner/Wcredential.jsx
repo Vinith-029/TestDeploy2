@@ -22,7 +22,7 @@ const Wcredential = () => {
 
           <div className="flex flex-col">
             <div className="text-xs">Select the warehouse</div>
-            <select className="col-span-1 px-12 row-span-1  bg-inputBoxColor bg-opacity-50 rounded p-2 px-14 outline-none">
+            <select className="col-span-1 row-span-1  bg-inputBoxColor bg-opacity-50 rounded p-2 px-14 outline-none">
           
             <option value="bangalore">Bangalore</option>
             <option value="chennai">Chennai</option>
