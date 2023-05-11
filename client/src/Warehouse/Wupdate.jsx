@@ -7,7 +7,7 @@ import axios from 'axios';
 import 'react-datepicker/dist/react-datepicker.css';
 
 const instance = axios.create({
-  baseURL: 'http://localhost:3000/api/warehouse_current',
+  baseURL: 'https://testlogiship.onrender.com/api/warehouse_current',
   timeout: 5000, // Timeout to wait for a response (in milliseconds)
 });
 

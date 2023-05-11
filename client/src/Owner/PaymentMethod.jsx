@@ -10,9 +10,9 @@ export const PaymentMethod = () => {
 
   const checkoutHandler = async (amount) => {
 
-    const { data: { key } } = await axios.get("http://localhost:3000/api/getkey")
+    const { data: { key } } = await axios.get("https://testlogiship.onrender.com/api/getkey")
 
-    const { data: { order } } = await axios.post("http://localhost:3000/api/checkout", {
+    const { data: { order } } = await axios.post("https://testlogiship.onrender.com/api/checkout", {
         amount
     })
 
@@ -23,7 +23,7 @@ export const PaymentMethod = () => {
         name: "Logiship",
         description: "Payment for shipment ",
         order_id: order.id,
-        callback_url: "http://localhost:3000/api/paymentverification",
+        callback_url: "https://testlogiship.onrender.com/api/paymentverification",
         handler : function (response){
           if (typeof response.razorpay_payment_id == 'undefined' ||  response.razorpay_payment_id < 1) {
             navigate('/')

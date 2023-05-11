@@ -8,7 +8,7 @@ export const Vapprove = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/transport/getReject', {
+        const response = await axios.get('https://testlogiship.onrender.com/api/transport/getReject', {
           params: {
             status: 'Reject',
           },

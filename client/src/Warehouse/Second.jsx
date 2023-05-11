@@ -24,10 +24,10 @@ const Second =()=>{
   const [remdata,setData2] = useState("") 
   
   
-  const URL = "http://localhost:3000/api/warehouse/fetchDetails/"+ p
-  const URL2 = "http://localhost:3000/api/warehouse/fetchImg/" + p
-  const URL3 = "http://localhost:3000/api/warehouse/fetchData/" + p 
-   const URL4 = "http://localhost:3000/api/warehouse/fetchData2/" + p
+  const URL = "https://testlogiship.onrender.com/api/warehouse/fetchDetails/"+ p
+  const URL2 = "https://testlogiship.onrender.com/api/warehouse/fetchImg/" + p
+  const URL3 = "https://testlogiship.onrender.com/api/warehouse/fetchData/" + p 
+   const URL4 = "https://testlogiship.onrender.com/api/warehouse/fetchData2/" + p
 
   useEffect(()=>{
     const fetchBack = async ()=>{
@@ -51,7 +51,7 @@ const Second =()=>{
       // formData.append('total_V' , total_V)
       // formData.append('rem_V' , rem_V)
      console.log(total_V)
-      await axios.post("http://localhost:3000/api/warehouse/putUpdate/"+ p ,{
+      await axios.post("https://testlogiship.onrender.com/api/warehouse/putUpdate/"+ p ,{
         total_V,
         rem_V
       })

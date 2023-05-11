@@ -17,7 +17,7 @@ export const SelectVehicle = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/transport/getApproved', {
+        const response = await axios.get('https://testlogiship.onrender.com/api/transport/getApproved', {
           params: {
             status: 'approved',
           },
@@ -33,9 +33,9 @@ export const SelectVehicle = () => {
 
   const checkoutHandler = async (amount) => {
 
-    const { data: { key } } = await axios.get("http://localhost:3000/api/getkey")
+    const { data: { key } } = await axios.get("https://testlogiship.onrender.com/api/getkey")
 
-    const { data: { order } } = await axios.post("http://localhost:3000/api/checkout", {
+    const { data: { order } } = await axios.post("https://testlogiship.onrender.com/api/checkout", {
         amount
     })
     const options = {
@@ -49,16 +49,16 @@ export const SelectVehicle = () => {
 
     
 
-        callback_url: "http://localhost:3000/api/paymentverification",
+        callback_url: "https://testlogiship.onrender.com/api/paymentverification",
         handler : function (response){
           if (typeof response.razorpay_payment_id == 'undefined' ||  response.razorpay_payment_id < 1) {
             navigate('/')
           } else {
             try {
-              axios.put(`http://localhost:3000/api/package/${productId}/transport`, { transport_id: selectedVehicle._id });
+              axios.put(`https://testlogiship.onrender.com/api/package/${productId}/transport`, { transport_id: selectedVehicle._id });
               console.log("Package transport ID updated successfully.");
     
-              axios.put(`http://localhost:3000/api/transport/update/${selectedVehicle._id}`, { status: 'intransit' });
+              axios.put(`https://testlogiship.onrender.com/api/transport/update/${selectedVehicle._id}`, { status: 'intransit' });
               console.log("Transport status updated successfully.");
     
               navigate('/Transportdetails');

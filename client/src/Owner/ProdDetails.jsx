@@ -19,7 +19,7 @@ const ProdDetails = () => {
   const [destination, setDestination] = useState('Bangalore');
   const [volume, setVolume] = useState('');
   const [quantity, setQuantity] = useState('');
-  const [producttype, setProducttype] = useState('');
+  const [producttype, setProducttype] = useState('Electronics');
   const [document,setDocument] = useState('');
   const handleSource = (e) => {
     setSource(e.target.value);

@@ -6,7 +6,7 @@ import { useLocation } from 'react-router-dom';
 export const WCurr = () => {
 
 
-  const URL = "http://localhost:3000/api/warehouse_current/fetchCurrent"
+  const URL = "https://testlogiship.onrender.com/api/warehouse_current/fetchCurrent"
   // const [productID,setProdID] = useState();
   // const [productName,setProdName] = useState();
   // const [vendorName,setvendorName] = useState();
