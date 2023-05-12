@@ -37,6 +37,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/api", paymentRoute);
 
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  res.setHeader('Access-Control-Allow-Headers', 'Authorization');
+  next();
+});
+
 const __dir = path.resolve();
 
 app.use("/uploads" , express.static(path.join(__dir , "/uploads")))
