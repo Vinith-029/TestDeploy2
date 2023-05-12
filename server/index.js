@@ -32,7 +32,9 @@ app.use('/api/package',productDetails);
 // app.use('/api/warehouse',fetchCurrent);
 
 config({ path: "./config/config.env" });
-app.use(cors());
+app.use(cors({
+  origin : 'https://main--logiship.netlify.app/'
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/api", paymentRoute);
