@@ -32,8 +32,10 @@ app.use('/api/package',productDetails);
 // app.use('/api/warehouse',fetchCurrent);
 
 config({ path: "./config/config.env" });
+
 app.use(cors({
-  origin : 'https://main--logiship.netlify.app/'
+  origin : 'https://main--logiship.netlify.app/',
+  credentials : true
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
