@@ -45,15 +45,15 @@ app.get("/api/getkey", (req, res) =>
   res.status(200).json({ key: process.env.RAZORPAY_API_KEY })
 );
 
-// app.post('/api/CheckOutUpdate',(req, res)=>{
-//   const product_id = req.body.product_id;
-//   const check_out = req.body.check_out;
+app.post('/api/CheckOutUpdate',(req, res)=>{
+  const product_id = req.body.product_id;
+  const check_out = req.body.check_out;
 
-//   ware_test.update({ product_id : product_id },{$set:{check_out:check_out}}, (err, doc)=>{
-//     if(err) return console.log(err);
-//     res.json(doc)
-//   })
-// })
+  ware_test.update({ product_id : product_id },{$set:{check_out:check_out}}, (err, doc)=>{
+    if(err) return console.log(err);
+    res.json(doc)
+  })
+})
 
 app.put('/api/warehouse_test/product', (req, res) => {
   const { productId, newDate } = req.body;

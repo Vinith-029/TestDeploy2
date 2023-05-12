@@ -37,7 +37,7 @@ export const paymentVerification = async (req, res) => {
     });
 
     res.redirect(
-      `https://testlogiship.onrender.com/paymentsuccess?reference=${razorpay_payment_id}`
+      `http://localhost:5000/paymentsuccess?reference=${razorpay_payment_id}`
     );
   } else {
     res.status(400).json({
