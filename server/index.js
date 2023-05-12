@@ -51,11 +51,16 @@ app.use("/uploads" , express.static(path.join(__dir , "/uploads")))
 app.get("/api/getkey", (req, res) =>
   res.status(200).json({ key: process.env.RAZORPAY_API_KEY })
 );
+
 app.post("/api/checkout", async (req, res) => {
   const options = {
     amount: Number(req.body.amount * 100),
     currency: "INR",
   };
+  const instance =new Razorpay({
+    key_id : process.env.RAZORPAY_API_KEY,
+    key_secret: process.env.RAZORPAY_API_SECRET
+})
   try {
     const order = await instance.orders.create(options);
     res.status(200).json({
