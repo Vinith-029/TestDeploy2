@@ -33,15 +33,15 @@ export const SelectVehicle = () => {
 
   const checkoutHandler = async (amount) => {
     
-    const { data: { key } } = await axios.get("http://localhost:3000/api/getkey")
-    // const { data: { key } } = await axios.get("https://testlogiship.onrender.com/api/getkey")
+    // const { data: { key } } = await axios.get("http://localhost:3000/api/getkey")
+    const { data: { key } } = await axios.get("https://testlogiship.onrender.com/api/getkey")
 
-    // const { data: { order } } = await axios.post("https://testlogiship.onrender.com/api/checkout", {
-    //     amount
-    // })
-    const { data: { order } } = await axios.post("http://localhost:3000/api/checkout", {
-      amount
-  })
+    const { data: { order } } = await axios.post("https://testlogiship.onrender.com/api/checkout", {
+        amount
+    })
+  //   const { data: { order } } = await axios.post("http://localhost:3000/api/checkout", {
+  //     amount
+  // })
     const options = {
         key,
         amount:transport.price,
