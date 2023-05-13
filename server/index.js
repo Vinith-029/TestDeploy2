@@ -56,6 +56,8 @@ app.get("/api/getkey", (req, res) =>
   res.status(200).json({ key: process.env.RAZORPAY_API_KEY })
 );
 
+
+
 app.post("/api/checkout", async (req, res) => {
   const options = {
     amount: Number(req.body.amount * 100),
@@ -79,8 +81,6 @@ app.post("/api/checkout", async (req, res) => {
     });
   }
 });
-
-
 
 // app.post('/api/CheckOutUpdate',(req, res)=>{
 //   const product_id = req.body.product_id;
@@ -112,6 +112,19 @@ mongoose.connect(process.env.MONGODB_URI, {
 })
   .then(() => console.log('DB Connected'))
   .catch((err) => console.error('Error connecting to DB:', err));
+
+  app.post("/api/checkout", async(req, res) =>{
+    const options = {
+      amount: Number(req.body.amount * 100),
+      currency: "INR",
+    };
+    const order = await instance.orders.create(options);
+    res.status(200).json({
+      success: true,
+      order,
+    });
+  });
+  
 
 export const instance =new Razorpay({
     key_id : process.env.RAZORPAY_API_KEY,
