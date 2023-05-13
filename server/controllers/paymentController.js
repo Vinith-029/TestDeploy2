@@ -1,9 +1,10 @@
 import { instance } from "../index.js";
 import crypto from "crypto";
+import { json } from "express";
 
 export const checkout = async (req, res) => {
   const options = {
-    amount: JSON(req.body.amount * 100),
+    amount: json(req.body.amount * 100),
     currency: "INR",
   };
   const order = await instance.orders.create(options);
