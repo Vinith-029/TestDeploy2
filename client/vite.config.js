@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react-swc'
 export default defineConfig({
   server : {
     proxy :{
-      '/api' : 'https://testlogiship.onrender.com'
+      '/api' : 'https://testlogi.netlify.app/'
     }
   },
   plugins: [react()],
