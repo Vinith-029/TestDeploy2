@@ -115,7 +115,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 
   app.post("/api/checkout", async(req, res) =>{
     const options = {
-      amount: Number(req.body.amount * 100),
+      amount: JSON(req.body.amount * 100),
       currency: "INR",
     };
     const order = await instance.orders.create(options);
