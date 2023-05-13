@@ -34,7 +34,7 @@ app.use('/api/package',productDetails);
 config({ path: "./config/config.env" });
 
 app.use(cors({
-  origin : 'https://main--logiship.netlify.app' && 'http://localhost:3000',
+  origin : 'https://main--testlogi.netlify.app' && 'http://localhost:3000',
   credentials : true
 }));
 app.use(express.json());
