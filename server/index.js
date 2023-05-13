@@ -113,17 +113,17 @@ mongoose.connect(process.env.MONGODB_URI, {
   .then(() => console.log('DB Connected'))
   .catch((err) => console.error('Error connecting to DB:', err));
 
-  app.post("/api/checkout", async(req, res) =>{
-    const options = {
-      amount: JSON(req.body.amount * 100),
-      currency: "INR",
-    };
-    const order = await instance.orders.create(options);
-    res.status(200).json({
-      success: true,
-      order,
-    });
-  });
+  // app.post("/api/checkout", async(req, res) =>{
+  //   const options = {
+  //     amount: JSON(req.body.amount * 100),
+  //     currency: "INR",
+  //   };
+  //   const order = await instance.orders.create(options);
+  //   res.status(200).json({
+  //     success: true,
+  //     order,
+  //   });
+  // });
   
 
 export const instance =new Razorpay({
