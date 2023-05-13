@@ -57,31 +57,6 @@ app.get("/api/getkey", (req, res) =>
 );
 
 
-
-app.post("/api/checkout", async (req, res) => {
-  const options = {
-    amount: Number(req.body.amount * 100),
-    currency: "INR",
-  };
-  const instance =new Razorpay({
-    key_id : process.env.RAZORPAY_API_KEY,
-    key_secret: process.env.RAZORPAY_API_SECRET
-})
-  try {
-    const order = await instance.orders.create(options);
-    res.status(200).json({
-      success: true,
-      order,
-    });
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      message: "Unable to create order",
-      error,
-    });
-  }
-});
-
 // app.post('/api/CheckOutUpdate',(req, res)=>{
 //   const product_id = req.body.product_id;
 //   const check_out = req.body.check_out;

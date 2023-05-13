@@ -7,12 +7,19 @@ export const checkout = async (req, res) => {
     amount: Number(req.body.amount * 100),
     currency: "INR",
   };
-  const order = await instance.orders.create(options);
-
-  res.status(200).json({
-    success: true,
-    order,
-  });
+  try {
+    const order = await instance.orders.create(options);
+    res.status(200).json({
+      success: true,
+      order,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "Unable to create order",
+      error,
+    });
+  }
 };
 
 export const paymentVerification = async (req, res) => {
